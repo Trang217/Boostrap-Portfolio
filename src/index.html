@@ -11,16 +11,16 @@
   <body>
     <!-- Header -->
 
-    <header class="header sticky-top">
+    <header>
 
       <!-- navigation bar -->
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <nav class="navbar navbar-expand-lg  navbar-light fixed-top">
           <div class="container-fluid">
 
             <!-- logo -->
 
-            <a class="navbar-brand ms-5" href="./index.html">
+            <a class="navbar-brand text-muted ms-5" href="./index.html">
              Trang Nguyen</a>
 
             <!-- navbar toggle -->
@@ -31,7 +31,7 @@
 
             <!-- main navigation -->
             
-            <div class="collapse navbar-collapse navbar-text justify-content-between" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse nav-main justify-content-between" id="navbarSupportedContent">
               <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item px-3">
                   <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -62,20 +62,22 @@
 
               <!-- social icons -->
 
-              <ul class="navbar-nav social-icons sm-col me-5">
+              <ul class="navbar-nav social-icons me-5">
 
-                  <li class=" social-icon p-2">
-                    <a href="https://www.linkedin.com/in/trang-nguyen-0383981b7/">
-                      <i class="fab fa-linkedin-in"></i>
+                 <li class=" social-icon p-2">
+                    <a href="https://www.facebook.com/minhtrang.nguyen.98" target="_blank">
+                      <i class="fab fa-facebook-f  link-primary hover"></i>
                     </a>
                   </li>
-                  <li class=" social-icon p-2">
-                    <a href="https://www.facebook.com/minhtrang.nguyen.98">
-                      <i class="fab fa-facebook-f"></i>
+
+                  <li class=" social-icon  p-2">
+                    <a href="https://www.linkedin.com/in/trang-nguyen-0383981b7/" target="_blank">
+                      <i class="fab fa-linkedin-in link-info"></i>
                     </a>
                   </li>
-                  <li class=" social-icon p-2"><a href="https://www.instagram.com/tranguu92/">
-                    <i class="fab fa-instagram"></i>
+                 
+                  <li class=" social-icon p-2"><a href="https://www.instagram.com/tranguu92/" target="_blank">
+                    <i class="fab fa-instagram link-danger"></i>
                   </a>
                 </li>
 
@@ -85,11 +87,52 @@
           </div>
       </nav>
       <!-- navigation bar ends -->
-
+</header>
     <!-- Header ends -->
 
-    <main>
-    </main>
+    <!-- Hero section -->
+
+    <section class="position-relative">
+
+      <img src="./images/bg.jpg" alt="bg photo" class="vh-100 w-100">
+      <div class="wrapper d-inline-flex position-absolute top-50 start-50 translate-middle">
+        <h2 class="static-texts pt-2">I am </h2>
+        <ul class="dynamic-texts list-group">
+          <li><span>Trang Nguyen</span></li>
+          <li><span>a Web Developer</span></li>
+          
+        </ul>
+      </div>
+    </section>
+
+    <!-- About section -->
+
+    <section id="about" class="container vh-100 d-grid justify-content-center align-content-center">
+
+      <div class="container position-relative mb-5">
+        <h2 class=" text-about-heading-h2  text-uppercase mt-5 mb-0 text-center ">About me</h2>
+        <p class=" text-about-heading-p text-muted  d-block mx-auto position-absolute top-50 start-50 translate-middle pt-4">Know Me More</p>
+      </div>
+
+      <div class="row container mt-5 mb-5">
+        <div class="col-lg-2">
+          <img src="./images/profile.png" alt="profile-photo" class="border-radius-rounded" width="150px" height="150px">
+        </div>
+        <div class="col-lg-10">
+          <h3 class=" mb-4 text-about-body-h3">I am 
+           <span class="text-info"> Trang Nguyen </span>, a Web Developer</h3>
+          <p class="text-about-body-p ">I help you build brand for your business at an affordable price. Thousands of clients have procured exceptional results while working with our dedicated team. when an unknown printer took a galley of type and scrambled it to make a type specimen book. Delivering work within time and budget which meets client’s requirements is our moto. Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Lorem Ipsum has been the industry's standard dummy text ever when an unknown printer took a galley. Lisque persius interesset in quot quidam possim iriure.
+
+          </p>
+
+          <button class="btn btn-outline-info btn-lg btn-light fw-bold mt-3 p-2"  type="button">Download CV</button>
+          </div>
+      </div>
+
+
+    </section>
+
+    
 
     <footer></footer>
 
