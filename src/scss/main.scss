@@ -102,27 +102,51 @@ body {
 
 // about section
 
-.text-about-heading-h2 {
-	font-size: $text-about-heading-h2;
-	font-weight: 600;
-	color: #dee3e4;
-	opacity: 0.4;
+#about-section {
+	.text-about-heading-h2 {
+		font-size: $text-about-heading-h2;
+		font-weight: 600;
+		color: #dee3e4;
+		opacity: 0.4;
+	}
+
+	.text-about-heading-p {
+		font-size: $text-about-heading-p;
+		font-weight: 600;
+		color: #343a40;
+	}
+
+	.text-about-body-p {
+		font-size: $text-about-body-p;
+		color: #4c4d4d;
+		line-height: 1.8;
+	}
+
+	.text-about-body-h3 {
+		font-size: $text-about-body-h3;
+		color: #252b33;
+		font-weight: bold;
+	}
 }
 
-.text-about-heading-p {
-	font-size: $text-about-heading-p;
-	font-weight: 600;
-	color: #343a40;
-}
+// Skills Section
 
-.text-about-body-p {
-	font-size: $text-about-body-p;
-	color: #4c4d4d;
-	line-height: 1.8;
-}
+#skill-section {
+	.text-skill-heading-h2 {
+		font-size: $text-about-heading-h2;
+		font-weight: 600;
+		color: #dee3e4;
+		opacity: 0.4;
+	}
 
-.text-about-body-h3 {
-	font-size: $text-about-body-h3;
-	color: #252b33;
-	font-weight: bold;
+	.text-skill-heading-p {
+		font-size: $text-about-heading-p;
+		font-weight: 600;
+		color: #343a40;
+	}
+
+	.skill-card {
+		width: 200px;
+		height: 200px;
+	}
 }
