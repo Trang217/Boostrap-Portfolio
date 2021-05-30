@@ -1,7 +1,7 @@
 @import "./variables";
+@import "./mixin";
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 :root {
@@ -13,140 +13,230 @@
 }
 
 body {
-	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	color: $bg-color;
+	font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
+	background-color: $bg-color;
+	color: #252b33;
 }
 
 // navigation
 
 .navbar {
+	@include fancy-bgcolor;
+	opacity: 0.8;
 	.navbar-brand {
-		font-family: 'Pacifico', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-			Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: $nav-logo-size;
 		font-weight: 600;
 	}
 
 	.nav-link {
-		color: $nav-text-color;
-		font-size: 1.6rem;
-		&:hover {
-			color: $nav-hover-color !important;
-		}
+		font-size: $nav-link-size;
 	}
 
 	i {
-		font-size: 1.7rem;
+		font-size: $nav-link-size;
 	}
 }
 
 // Hero Section
 
-.wrapper {
-	.static-texts {
-		color: #fff;
-		font-size: 6rem;
-		font-weight: 400;
-	}
+#hero-section {
+	background-image: url("../images/bg-6.jpg");
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
 
-	.dynamic-texts {
-		margin-left: 1.5rem;
-		height: 9rem;
-		line-height: 9rem;
-		overflow: hidden;
+	.intro {
+		h1 {
+			color: #fcfafb;
+			font-size: $text-lg-h1;
+			text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 
-		li {
-			color: #f54bde;
-			font-size: 6rem;
-			font-weight: 500;
-			position: relative;
-			top: 0;
-			animation: slide 12s steps(4) infinite;
+			span:before {
+				content: '';
+				animation: animate infinite 8s;
+				color: #fafafa;
+			}
+		}
 
-			span {
-				position: relative;
-				margin: 0.5rem 0;
-				line-height: 9rem;
+		p {
+			font-size: 18px;
+			line-height: 35px;
+		}
 
-				&::after {
-					content: "";
-					position: absolute;
-					left: 0;
-					height: 100%;
-					width: 100%;
-					background: #ebcfce;
-					border-left: 2px solid #f54bde;
-					animation: typing 3s steps(10) infinite;
-				}
+		a {
+			text-decoration: none;
+			font-size: 1.8rem;
+			border: 2px solid white;
+
+			&:hover {
+				@include fancy-bgcolor;
 			}
 		}
 	}
-}
 
-@keyframes slide {
-	100% {
-		top: -360px;
+	.cloud {
+		overflow-x: hidden;
+	}
+	.cloud img {
+		animation: cld calc(10s * var(--i)) linear infinite;
+		opacity: .6;
+		max-width: 100%;
+		position: absolute;
+		bottom: 0px;
+	}
+	@keyframes cld {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(100%);
+		}
+	}
+
+	@keyframes animate {
+		0% {
+			content: 'Trang Nguyen';
+		}
+
+		36% {
+			content: 'a Web Developer';
+		}
+
+		66% {
+			content: 'a Web Designer';
+		}
+
+		100% {
+			content: 'a Freelancer';
+		}
 	}
 }
-
-@keyframes typing {
-	40%,
-	60% {
-		left: calc(100% + 30px);
-	}
-	100% {
-		left: 0;
-	}
-}
-
 // about section
 
 #about-section {
-	.text-about-heading-h2 {
-		font-size: $text-about-heading-h2;
-		font-weight: 600;
-		color: #dee3e4;
-		opacity: 0.4;
+	.text-h2 {
+		font-size: $text-lg-h2; //6rem
 	}
-
-	.text-about-heading-p {
-		font-size: $text-about-heading-p;
-		font-weight: 600;
-		color: #343a40;
-	}
-
 	.text-about-body-p {
 		font-size: $text-about-body-p;
-		color: #4c4d4d;
+		color: #353636;
 		line-height: 1.8;
+		font-weight: 400;
 	}
 
 	.text-about-body-h3 {
 		font-size: $text-about-body-h3;
-		color: #252b33;
 		font-weight: bold;
+	}
+
+	.text-name,
+	.text-cloud {
+		color: $text-name-color;
+	}
+
+	button {
+		@include fancy-btn;
 	}
 }
 
 // Skills Section
 
 #skill-section {
-	.text-skill-heading-h2 {
-		font-size: $text-about-heading-h2;
+	.section-heading-h2 {
+		font-size: $section-heading-h2;
 		font-weight: 600;
-		color: #dee3e4;
+		color: #b5c0c2c4;
 		opacity: 0.4;
 	}
 
-	.text-skill-heading-p {
-		font-size: $text-about-heading-p;
+	.section-heading-p {
+		font-size: $section-heading-p;
 		font-weight: 600;
-		color: #343a40;
 	}
 
 	.skill-card {
 		width: 200px;
 		height: 200px;
 	}
+
+	.text-html {
+		font-size: 6rem;
+		@include fancy-card (rgb(226, 157, 148));
+
+		i {
+			color: rgb(223, 66, 9);
+		}
+	}
+
+	.text-css {
+		font-size: 6rem;
+		@include fancy-card (rgb(148, 182, 226));
+
+		i {
+			color: rgb(68, 31, 233);
+		}
+	}
+
+	.text-sass {
+		font-size: 6rem;
+		@include fancy-card (rgb(224, 127, 203));
+
+		i {
+			color: rgb(233, 33, 183);
+		}
+	}
+
+	.text-bootstrap {
+		font-size: 6rem;
+		@include fancy-card (rgb(215, 134, 235));
+
+		i {
+			color: rgb(170, 16, 175);
+		}
+	}
+
+	.text-js {
+		font-size: 6rem;
+		@include fancy-card (rgb(235, 233, 133));
+
+		i {
+			color: rgb(229, 233, 20);
+		}
+	}
+
+	.text-react {
+		font-size: 6rem;
+		@include fancy-card (rgb(148, 191, 226));
+
+		i {
+			color: rgb(32, 153, 184);
+		}
+	}
+}
+
+// Contact Section
+
+#contact-section {
+	.section-heading-h2 {
+		font-size: $section-heading-h2;
+		font-weight: 600;
+		color: #b5c0c2c4;
+		opacity: 0.4;
+	}
+
+	.section-heading-p {
+		font-size: $section-heading-p;
+		font-weight: 600;
+	}
+
+	button {
+		@include fancy-btn;
+	}
+}
+
+//footer
+
+footer {
+	@include fancy-bgcolor;
 }

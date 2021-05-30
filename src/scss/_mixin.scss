@@ -1,0 +1,69 @@
+@import "./variables";
+
+@mixin fancy-btn {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: rgb(115, 132, 140);
+		background: linear-gradient(27deg, rgba(115, 132, 140, 1) 21%, rgba(206, 127, 122, 1) 74%);
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		transform-origin: bottom left;
+		transform: rotate(-90deg);
+		transition: transform 0.2s;
+	}
+	&:hover::before {
+		transform: rotate(0deg);
+	}
+
+	&:hover {
+		color: #fff9f5;
+	}
+}
+
+@mixin fancy-bgcolor {
+	background: rgb(106, 128, 139);
+	background: linear-gradient(
+		90deg,
+		rgba(106, 128, 139, 1) 0%,
+		rgba(145, 142, 149, 1) 50%,
+		rgba(184, 135, 130, 1) 88%,
+		rgba(232, 147, 127, 1) 100%
+	);
+}
+
+@mixin fancy-card($hovercolor) {
+	position: relative;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+		background-color: white;
+		transition: 0.5s;
+		z-index: -1;
+	}
+
+	&:hover::before {
+		transform: rotate(20deg);
+		box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+		background-color: $hovercolor;
+	}
+
+	&:hover::after {
+		transform: rotate(10deg);
+		box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+		background-color: $hovercolor;
+	}
+}
