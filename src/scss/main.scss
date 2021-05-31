@@ -151,13 +151,17 @@ body {
 		font-weight: 600;
 	}
 
+	h5 {
+		font-size: 1.8rem;
+	}
+
 	.skill-card {
-		width: 20rem;
-		height: 20rem;
+		width: 22rem;
+		height: 22rem;
+		font-size: 6rem;
 	}
 
 	.text-html {
-		font-size: 6rem;
 		@include fancy-card (rgb(226, 157, 148));
 
 		i {
@@ -166,7 +170,6 @@ body {
 	}
 
 	.text-css {
-		font-size: 6rem;
 		@include fancy-card (rgb(148, 182, 226));
 
 		i {
@@ -175,7 +178,6 @@ body {
 	}
 
 	.text-sass {
-		font-size: 6rem;
 		@include fancy-card (rgb(224, 127, 203));
 
 		i {
@@ -184,7 +186,6 @@ body {
 	}
 
 	.text-bootstrap {
-		font-size: 6rem;
 		@include fancy-card (rgb(215, 134, 235));
 
 		i {
@@ -229,19 +230,37 @@ footer {
 		font-size: 1.2rem;
 
 		.navbar-brand {
-			font-size: 2rem;
+			font-size: 2.5rem !important;
 		}
 
 		#hero-section {
 			h1 {
-				font-size: 3rem;
+				font-size: 4rem !important;
+			}
+			a {
+				font-size: 1.6rem !important;
 			}
 		}
 
 		#about-section {
-			img {
-				width: 200px;
+			margin-top: 5rem !important;
+
+			h2 {
+				font-size: 3rem !important;
+				font-weight: 600 !important;
 			}
+			img {
+				width: 25rem;
+				margin-bottom: 5rem;
+			}
+		}
+
+		#skill-section {
+			margin: 25rem 0 !important;
+		}
+
+		#contact-section {
+			margin-bottom: 15rem !important;
 		}
 	}
 }
@@ -251,25 +270,25 @@ footer {
 @media (max-width: 767.98px) {
 	body {
 		font-size: 1.2rem;
-	}
 
-	#hero-section {
-		h1 {
-			font-size: 5rem;
-		}
-	}
-
-	#about-section {
-		img {
-			width: 250px;
+		#hero-section {
+			h1 {
+				font-size: 5rem !important;
+			}
 		}
 
-		h2 {
-			font-size: 4rem;
-		}
-	}
+		#about-section {
+			img {
+				width: 250px;
+			}
 
-	#contact-section {
-		height: 100vh;
+			h2 {
+				font-size: 4rem;
+			}
+		}
+
+		#contact-section {
+			height: 100vh;
+		}
 	}
 }
