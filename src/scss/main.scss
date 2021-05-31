@@ -222,7 +222,7 @@ footer {
 	@include fancy-bgcolor;
 }
 
-//  Small devices (landscape phones, 576px and up)
+//  Small devices
 
 @media (max-width: 576px) {
 	body {
@@ -267,7 +267,7 @@ footer {
 	}
 }
 
-// Medium devices (tablets, less than 992px)
+// Medium devices
 
 @media (max-width: 768px) {
 	body {
