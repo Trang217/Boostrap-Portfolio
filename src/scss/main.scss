@@ -4,6 +4,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+:root {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+// navigation
+
+.navbar {
+  @include fancy-bgcolor;
+  opacity: 0.8;
+  .navbar-brand {
+    font-size: $nav-logo-size;
+    font-weight: 600;
+  }
+
+  .nav-link {
+    font-size: $nav-link-size;
+  }
+
+  i {
+    font-size: $nav-link-size;
+  }
+
+  .navbar-toggler {
+    background-color: #ec784a;
+  }
+}
+
 // Hero Section
 
 #hero-section {
@@ -14,6 +52,7 @@
 
   .intro {
     h1 {
+      font-size: $text-lg-h1;
       text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 
       span:before {
@@ -55,7 +94,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.3;
-    animation: fly 500s linear infinite;
+    animation: fly 300s linear infinite;
 
     @keyframes fly {
       0% {
@@ -70,6 +109,28 @@
 // about section
 
 #about-section {
+  .text-h2 {
+    font-size: $text-lg-h2;
+  }
+  .text-about-body-p {
+    font-size: $text-about-body-p;
+    color: #353636;
+    line-height: 1.8;
+    font-weight: 400;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .text-about-body-h3 {
+    font-size: $text-about-body-h3;
+    font-weight: bold;
+  }
+
+  .text-name,
+  .text-cloud {
+    color: $text-name-color;
+  }
+
   button {
     @include fancy-btn;
   }
@@ -78,6 +139,28 @@
 // Skills Section
 
 #skill-section {
+  .section-heading-h2 {
+    font-size: $section-heading-h2;
+    font-weight: 600;
+    color: #b5c0c2c4;
+    opacity: 0.4;
+  }
+
+  .section-heading-p {
+    font-size: $section-heading-p;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }
+
+  .skill-card {
+    width: 22rem;
+    height: 22rem;
+    font-size: 6rem;
+  }
+
   .text-html {
     @include fancy-card(rgb(226, 157, 148));
 
@@ -114,7 +197,104 @@
 // Contact Section
 
 #contact-section {
+  height: 70vh;
+  .section-heading-h2 {
+    font-size: $section-heading-h2;
+    font-weight: 600;
+    color: #b5c0c2c4;
+    opacity: 0.4;
+  }
+
+  .section-heading-p {
+    font-size: $section-heading-p;
+    font-weight: 600;
+  }
+
   button {
+    color: #4d5050;
     @include fancy-btn;
+  }
+}
+
+//footer
+
+footer {
+  @include fancy-bgcolor;
+}
+
+//  Small devices
+
+@media (max-width: 576px) {
+  body {
+    width: 100vh;
+    font-size: 1.2rem;
+
+    .navbar-brand {
+      font-size: 2.5rem !important;
+    }
+
+    #hero-section {
+      h1,
+      span {
+        font-size: 4rem !important;
+      }
+
+      a {
+        font-size: 1.6rem !important;
+      }
+    }
+
+    #about-section {
+      margin-top: 5rem !important;
+
+      h2 {
+        font-size: 3rem !important;
+        font-weight: 600 !important;
+      }
+      img {
+        width: 25rem;
+        margin-bottom: 5rem;
+      }
+    }
+
+    #skill-section {
+      margin: 25rem 0 !important;
+    }
+
+    #contact-section {
+      margin-bottom: 15rem !important;
+    }
+  }
+}
+
+// Medium devices
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.2rem;
+
+    #hero-section {
+      h1 {
+        font-size: 5rem !important;
+      }
+    }
+
+    #about-section {
+      img {
+        width: 250px;
+      }
+
+      h2 {
+        font-size: 4rem;
+      }
+    }
+
+    #skill-section {
+      margin: 25rem 0 !important;
+    }
+
+    #contact-section {
+      height: 100vh;
+    }
   }
 }
