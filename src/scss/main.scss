@@ -1,300 +1,120 @@
 @import "./variables";
 @import "./mixin";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-:root {
-	padding: 0;
-	margin: 0;
-	line-height: 1.5rem;
-	box-sizing: border-box;
-	font-size: 62.5%;
-}
-
-body {
-	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-		'Open Sans', 'Helvetica Neue', sans-serif;
-	background-color: $bg-color;
-	color: $text-color;
-}
-
-// navigation
-
-.navbar {
-	@include fancy-bgcolor;
-	opacity: 0.8;
-	.navbar-brand {
-		font-size: $nav-logo-size;
-		font-weight: 600;
-	}
-
-	.nav-link {
-		font-size: $nav-link-size;
-	}
-
-	i {
-		font-size: $nav-link-size;
-	}
-
-	.navbar-toggler {
-		background-color: #ec784a;
-	}
-}
 
 // Hero Section
 
 #hero-section {
-	background-image: url("../images/bg-6.jpg");
-	background-size: cover;
-	background-position: top center;
-	background-repeat: no-repeat;
+  background-image: url("../images/bg-6.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
 
-	.intro {
-		h1 {
-			font-size: $text-lg-h1;
-			text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+  .intro {
+    h1 {
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
 
-			span:before {
-				content: '';
-				animation: animate infinite 8s;
-			}
-		}
+      span:before {
+        content: "";
+        animation: animate infinite 8s;
+      }
+    }
 
-		@keyframes animate {
-			0% {
-				content: 'Trang Nguyen';
-			}
+    @keyframes animate {
+      0% {
+        content: "Trang Nguyen";
+      }
 
-			36% {
-				content: 'a Web Developer';
-			}
+      36% {
+        content: "a Web Developer";
+      }
 
-			66% {
-				content: 'a Web Designer';
-			}
+      66% {
+        content: "a Web Designer";
+      }
 
-			100% {
-				content: 'a Freelancer';
-			}
-		}
+      100% {
+        content: "a Freelancer";
+      }
+    }
 
-		a:hover {
-			@include fancy-bgcolor;
-		}
-	}
+    a:hover {
+      @include fancy-bgcolor;
+    }
+  }
 
-	.cloud {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: url("../images/cloud2.png");
-		background-repeat: no-repeat;
-		background-size: cover;
-		opacity: 0.3;
-		animation: fly 300s linear infinite;
+  .cloud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/cloud2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    animation: fly 500s linear infinite;
 
-		@keyframes fly {
-			0% {
-				background-position: 0px;
-			}
-			100% {
-				background-position: 5440px;
-			}
-		}
-	}
+    @keyframes fly {
+      0% {
+        background-position: 0px;
+      }
+      100% {
+        background-position: 5440px;
+      }
+    }
+  }
 }
 // about section
 
 #about-section {
-	.text-h2 {
-		font-size: $text-lg-h2;
-	}
-	.text-about-body-p {
-		font-size: $text-about-body-p;
-		color: #353636;
-		line-height: 1.8;
-		font-weight: 400;
-		text-align: justify;
-		text-justify: inter-word;
-	}
-
-	.text-about-body-h3 {
-		font-size: $text-about-body-h3;
-		font-weight: bold;
-	}
-
-	.text-name,
-	.text-cloud {
-		color: $text-name-color;
-	}
-
-	button {
-		@include fancy-btn;
-	}
+  button {
+    @include fancy-btn;
+  }
 }
 
 // Skills Section
 
 #skill-section {
-	.section-heading-h2 {
-		font-size: $section-heading-h2;
-		font-weight: 600;
-		color: #b5c0c2c4;
-		opacity: 0.4;
-	}
+  .text-html {
+    @include fancy-card(rgb(226, 157, 148));
 
-	.section-heading-p {
-		font-size: $section-heading-p;
-		font-weight: 600;
-	}
+    i {
+      color: rgb(223, 66, 9);
+    }
+  }
 
-	h5 {
-		font-size: 1.8rem;
-	}
+  .text-css {
+    @include fancy-card(rgb(148, 182, 226));
 
-	.skill-card {
-		width: 22rem;
-		height: 22rem;
-		font-size: 6rem;
-	}
+    i {
+      color: rgb(68, 31, 233);
+    }
+  }
 
-	.text-html {
-		@include fancy-card (rgb(226, 157, 148));
+  .text-sass {
+    @include fancy-card(rgb(224, 127, 203));
 
-		i {
-			color: rgb(223, 66, 9);
-		}
-	}
+    i {
+      color: rgb(233, 33, 183);
+    }
+  }
 
-	.text-css {
-		@include fancy-card (rgb(148, 182, 226));
+  .text-bootstrap {
+    @include fancy-card(rgb(215, 134, 235));
 
-		i {
-			color: rgb(68, 31, 233);
-		}
-	}
-
-	.text-sass {
-		@include fancy-card (rgb(224, 127, 203));
-
-		i {
-			color: rgb(233, 33, 183);
-		}
-	}
-
-	.text-bootstrap {
-		@include fancy-card (rgb(215, 134, 235));
-
-		i {
-			color: rgb(170, 16, 175);
-		}
-	}
+    i {
+      color: rgb(170, 16, 175);
+    }
+  }
 }
 
 // Contact Section
 
 #contact-section {
-	height: 70vh;
-	.section-heading-h2 {
-		font-size: $section-heading-h2;
-		font-weight: 600;
-		color: #b5c0c2c4;
-		opacity: 0.4;
-	}
-
-	.section-heading-p {
-		font-size: $section-heading-p;
-		font-weight: 600;
-	}
-
-	button {
-		color: #4d5050;
-		@include fancy-btn;
-	}
-}
-
-//footer
-
-footer {
-	@include fancy-bgcolor;
-}
-
-//  Small devices
-
-@media (max-width: 576px) {
-	body {
-		width: 100vh;
-		font-size: 1.2rem;
-
-		.navbar-brand {
-			font-size: 2.5rem !important;
-		}
-
-		#hero-section {
-			h1,
-			span {
-				font-size: 4rem !important;
-			}
-
-			a {
-				font-size: 1.6rem !important;
-			}
-		}
-
-		#about-section {
-			margin-top: 5rem !important;
-
-			h2 {
-				font-size: 3rem !important;
-				font-weight: 600 !important;
-			}
-			img {
-				width: 25rem;
-				margin-bottom: 5rem;
-			}
-		}
-
-		#skill-section {
-			margin: 25rem 0 !important;
-		}
-
-		#contact-section {
-			margin-bottom: 15rem !important;
-		}
-	}
-}
-
-// Medium devices
-
-@media (max-width: 768px) {
-	body {
-		font-size: 1.2rem;
-
-		#hero-section {
-			h1 {
-				font-size: 5rem !important;
-			}
-		}
-
-		#about-section {
-			img {
-				width: 250px;
-			}
-
-			h2 {
-				font-size: 4rem;
-			}
-		}
-
-		#skill-section {
-			margin: 25rem 0 !important;
-		}
-
-		#contact-section {
-			height: 100vh;
-		}
-	}
+  button {
+    @include fancy-btn;
+  }
 }
